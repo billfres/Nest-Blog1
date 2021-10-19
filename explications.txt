@@ -16,4 +16,9 @@ touch src/database-connection.service.ts
 on import la database-connection dans App.module.ts
 
 //on installle le driver de postgres
-yarn add pg
+yarn add pg 
+
+nest g module auth 
+nest g service auth 
+nest g controller auth 
+rm src/auth/*.spec.ts
