@@ -1,4 +1,5 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
+import { LoginDTO, RegisterDTO } from 'src/models/user.dto';
 
 @Injectable()
 export class AuthService {
@@ -10,11 +11,11 @@ export class AuthService {
         image: null
     }
 
-    register(){
+    register(credentials : RegisterDTO){
         return this.nockUser;
     }
     
-    login(credentials: any){
+    login(credentials : LoginDTO){
         if(credentials.email === this.nockUser.email){
             return this.nockUser;
         }

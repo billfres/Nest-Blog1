@@ -22,3 +22,9 @@ nest g module auth
 nest g service auth 
 nest g controller auth 
 rm src/auth/*.spec.ts
+
+ajout de app.setGlobalPrefix('api'); dans main.ts
+
+mkdir src/models
+touch src/models/user.dto.ts  
+yarn add class-validator class-transformer
