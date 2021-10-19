@@ -1,0 +1,3 @@
+code .
+rm -rf test/
+rm src/app.controller.spec.ts
