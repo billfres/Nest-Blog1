@@ -1,3 +1,13 @@
 code .
 rm -rf test/
 rm src/app.controller.spec.ts
+
+
+touch .env
+sudo docker-compose up
+
+yarn add typeorm @nestjs/typeorm
+yarn add dotenv
+
+tmux
+yarn start:dev
