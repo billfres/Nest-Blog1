@@ -36,3 +36,7 @@ yarn add -D @types/bcryptjs
 touch src/entities/abstract-entity.ts
 -->on importe le UserEntity dans le auth.module.ts
     imports:[ TypeOrmModule.forFeature([UserEntity])],
+
+yarn add @nestjs/passport passport passport-local
+yarn add  @nestjs/passport passport @nestjs/jwt passport-jwt
+yarn add -D @types/passport-jwt @types/passport
