@@ -28,3 +28,11 @@ ajout de app.setGlobalPrefix('api'); dans main.ts
 mkdir src/models
 touch src/models/user.dto.ts  
 yarn add class-validator class-transformer
+
+mkdir src/entities
+touch src/entities/user.entity.ts
+yarn add bcryptjs
+yarn add -D @types/bcryptjs
+touch src/entities/abstract-entity.ts
+-->on importe le UserEntity dans le auth.module.ts
+    imports:[ TypeOrmModule.forFeature([UserEntity])],
