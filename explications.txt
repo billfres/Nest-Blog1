@@ -40,3 +40,9 @@ touch src/entities/abstract-entity.ts
 yarn add @nestjs/passport passport passport-local
 yarn add  @nestjs/passport passport @nestjs/jwt passport-jwt
 yarn add -D @types/passport-jwt @types/passport
+-->configuration de auth.module.ts
+
+touch jwt.strategy.ts
+mv jwt.strategy.ts src/auth/jwt.strategy.ts
+mv src/models/user.dto.ts src/models/user.models.ts
+Ajout de JwtStrategy dans providers: [AuthService,JwtStrategy]  et dans exports de auth.module

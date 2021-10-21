@@ -54,11 +54,11 @@ export class UpdateUserBody {
   @ApiProperty()
   user: UpdateUserDTO;
 }
-
+*/
 export interface AuthPayload {
   username: string;
 }
-
+/*
 export interface UserResponse {
   email: string;
   username?: string;
