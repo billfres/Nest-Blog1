@@ -46,3 +46,14 @@ touch jwt.strategy.ts
 mv jwt.strategy.ts src/auth/jwt.strategy.ts
 mv src/models/user.dto.ts src/models/user.models.ts
 Ajout de JwtStrategy dans providers: [AuthService,JwtStrategy]  et dans exports de auth.module
+
+--»
+
+nest g module user 
+nest g service user 
+nest g controller user
+nest g controller user/profile
+mv src/user/profile/profile.controller.ts src/user/profile.controller.ts
+rm -rf src/user/profile
+rm src/user/*.spec.ts
+touch src/auth/user.decorator.ts

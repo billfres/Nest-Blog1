@@ -37,7 +37,7 @@ export class RegisterBody {
   @ApiProperty()
   user: RegisterDTO;
 }
-
+*/
 export class UpdateUserDTO {
   @IsEmail()
   @IsOptional()
@@ -49,7 +49,7 @@ export class UpdateUserDTO {
   @IsOptional()
   bio: string;
 }
-
+/*
 export class UpdateUserBody {
   @ApiProperty()
   user: UpdateUserDTO;
