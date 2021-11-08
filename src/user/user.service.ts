@@ -38,11 +38,11 @@ export class UserService {
         ).toProfile(user);
       }
       */
-    /*
+    
       async followUser(
         currentUser: UserEntity,
         username: string,
-      ): Promise<ProfileResponse> {
+      )/*: Promise<ProfileResponse> */{
         const user = await this.userRepo.findOne({
           where: { username },
           relations: ['followers'],
@@ -55,7 +55,7 @@ export class UserService {
       async unfollowUser(
         currentUser: UserEntity,
         username: string,
-      ): Promise<ProfileResponse> {
+      )/*: Promise<ProfileResponse> */{
         const user = await this.userRepo.findOne({
           where: { username },
           relations: ['followers'],
@@ -65,5 +65,5 @@ export class UserService {
         );
         await user.save();
         return user.toProfile(currentUser);
-      }*/
+      }
 }

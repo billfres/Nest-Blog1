@@ -12,6 +12,12 @@ yarn add dotenv
 tmux
 yarn start:dev
 
+---------------------------
+docker-compose ps
+sudo docker-compose up -d 
+or 
+docker start postgres
+
 touch src/database-connection.service.ts
 on import la database-connection dans App.module.ts
 

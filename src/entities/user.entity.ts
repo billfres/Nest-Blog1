@@ -33,7 +33,7 @@ import {
     @Column()
     @Exclude()
     password: string;
-  /*
+  
     @ManyToMany(
       type => UserEntity,
       user => user.followee,
@@ -46,7 +46,7 @@ import {
       user => user.followers,
     )
     followee: UserEntity[];
-  
+  /*
     @OneToMany(
       type => ArticleEntity,
       article => article.author,
@@ -81,7 +81,7 @@ import {
     toJSON(): UserResponse {
       return <UserResponse>classToPlain(this);
     }
-  
+  */
     toProfile(user?: UserEntity) {
       let following = null;
       if (user) {
@@ -90,5 +90,5 @@ import {
       const profile: any = this.toJSON();
       delete profile.followers;
       return { ...profile, following };
-    }*/
+    }
   }

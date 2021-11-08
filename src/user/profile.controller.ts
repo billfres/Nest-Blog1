@@ -1,4 +1,5 @@
-import { Controller, Get, NotFoundException, Param, UseGuards } from '@nestjs/common';
+import { Controller, Delete, Get, NotFoundException, Param, Post, UseGuards } from '@nestjs/common';
+import { AuthGuard } from '@nestjs/passport';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/auth/user.decorator';
 import { UserEntity } from 'src/entities/user.entity';
@@ -22,21 +23,31 @@ export class ProfileController {
     }
     return { profile :user};
   }
-/*
-  @ApiBearerAuth()
+
+ /* @ApiBearerAuth()
   @ApiOkResponse({ description: 'Follow user' })
-  @ApiUnauthorizedResponse()
+  @ApiUnauthorizedResponse()*/
   @Post('/:username/follow')
-  @HttpCode(200)
+  //@HttpCode(200)
   @UseGuards(AuthGuard())
   async followUser(
     @User() user: UserEntity,
     @Param('username') username: string,
-  ): Promise<ResponseObject<'profile', ProfileResponse>> {
+  )/*: Promise<ResponseObject<'profile', ProfileResponse>> */{
     const profile = await this.userService.followUser(user, username);
     return { profile };
   }
 
+  @Delete('/:username/follow')
+  @UseGuards(AuthGuard())
+  async unfollowUser(
+    @User() user: UserEntity,
+    @Param('username') username: string,
+  )/*: Promise<ResponseObject<'profile', ProfileResponse>> */{
+    const profile = await this.userService.unfollowUser(user, username);
+    return { profile };
+ }
+/*
   @ApiBearerAuth()
   @ApiOkResponse({ description: 'Unfollow user' })
   @ApiUnauthorizedResponse()
